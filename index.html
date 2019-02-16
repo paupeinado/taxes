@@ -37,11 +37,11 @@
                         </select>
                     </div>
                     <div class="col">
-                        <label for="pvp_pvl">PVL</label>
+                        <label for="pvp_pvl">PVL (€)</label>
                         <input type="number" v-model="pvl" id="pvp_pvl" class="form-control" placeholder="PVL">
                     </div>
                     <div class="col">
-                        <label for="pvp_margen">Margen</label>
+                        <label for="pvp_margen">Margen (%)</label>
                         <input type="number" v-model="margen" id="pvp_margen" class="form-control" placeholder="Margen">
                     </div>
                 </div>
@@ -49,10 +49,10 @@
                 <hr class="mb-5">
 
                 <div class="form-group">
-                    <h1>PVP <span class="badge badge-warning" v-text="pvp">???</span></h1>
+                    <h1>PVP <span class="badge badge-warning" v-text="pvp">-</span></h1>
                 </div>
                 <div class="form-group">
-                    <h1>Ganancia <span class="badge badge-success" v-text="ganancia">???</span></h1>
+                    <h1>Ganancia <span class="badge badge-success" v-text="ganancia">-</span></h1>
                 </div>
             </div>
 
@@ -67,17 +67,17 @@
                         </select>
                     </div>
                     <div class="col">
-                        <label for="margen_pvl">PVL</label>
+                        <label for="margen_pvl">PVL (€)</label>
                         <input type="number" v-model="pvl" id="margen_pvl" class="form-control" placeholder="PVL">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col">
-                        <label for="margen_dto">Descuento</label>
+                        <label for="margen_dto">Descuento (%)</label>
                         <input type="number" v-model="dto" id="margen_dto" class="form-control" placeholder="Descuento">
                     </div>
                     <div class="col">
-                        <label for="margen_pvp">PVP</label>
+                        <label for="margen_pvp">PVP (€)</label>
                         <input type="number" v-model="pvp" id="margen_pvp" class="form-control" placeholder="PVP">
                     </div>
                 </div>
@@ -85,20 +85,20 @@
                 <hr class="mb-5">
 
                 <div class="form-group">
-                    <h1>PVL final <span class="badge badge-warning" v-text="pvl_final">???</span></h1>
+                    <h1>PVL final <span class="badge badge-warning" v-text="pvl_final">-</span></h1>
                 </div>
                 <div class="form-group">
-                    <h1>Margen <span class="badge badge-warning" v-text="margen">???</span></h1>
+                    <h1>Margen <span class="badge badge-warning" v-text="margen">-</span></h1>
                 </div>
                 <div class="form-group">
-                    <h1>Ganancia <span class="badge badge-success" v-text="ganancia">???</span></h1>
+                    <h1>Ganancia <span class="badge badge-success" v-text="ganancia">-</span></h1>
                 </div>
             </div>
 
             <div class="tab-pane fade" id="bonus" role="tabpanel">
                 <div class="form-row">
                     <div class="col">
-                        <label for="bonus_uds">Descuento</label>
+                        <label for="bonus_uds">Unidades</label>
                         <input type="number" v-model="uds" id="bonus_uds" class="form-control" placeholder="Unidades">
                     </div>
                     <div class="col">
@@ -110,10 +110,10 @@
                 <hr class="mb-5">
 
                 <div class="form-group">
-                    <h1>Uds total <span class="badge badge-warning" v-text="uds_total">???</span></h1>
+                    <h1>Uds total <span class="badge badge-warning" v-text="uds_total">-</span></h1>
                 </div>
                 <div class="form-group">
-                    <h1>Descuento <span class="badge badge-success" v-text="dto">???</span></h1>
+                    <h1>Descuento <span class="badge badge-success" v-text="dto">-</span></h1>
                 </div>
             </div>
         </div>

@@ -10,17 +10,17 @@ new Vue({
             if (this.pvl && this.margen) {
                 return ((this.pvl * this.iva) / ((100 - this.margen) / 100)).toFixed(2);
             } else {
-                return '???';
+                return '-';
             }
         },
         pvp: function () {
-            return this.pvp_calc !== '???' ?  this.pvp_calc + '%' : this.pvp_calc;
+            return this.pvp_calc !== '-' ?  this.pvp_calc + '%' : this.pvp_calc;
         },
         ganancia: function () {
-            if (this.pvp_calc !== '???') {
+            if (this.pvp_calc !== '-') {
                 return (this.pvp_calc - (this.pvl * this.iva)).toFixed(2) + ' €';
             } else {
-                return '???';
+                return '-';
             }
         }
     }
@@ -39,21 +39,21 @@ new Vue({
             if (this.pvl && this.dto) {
                 return (this.pvl - (this.pvl * (this.dto / 100))).toFixed(2);
             } else {
-                return '???';
+                return '-';
             }
         },
         margen: function () {
-            if (this.pvl_final !== '???' && this.pvp) {
+            if (this.pvl_final !== '-' && this.pvp) {
                 return ((1  - ((this.pvl_final * this.iva) / this.pvp)) * 100).toFixed(2) + '%';
             } else {
-                return '???';
+                return '-';
             }
         },
         ganancia: function () {
             if (this.pvp && this.pvl_final) {
                 return (this.pvp - (this.pvl_final * this.iva)).toFixed(2) + '€';
             } else {
-                return '???';
+                return '-';
             }
         }
     }
@@ -70,14 +70,14 @@ new Vue({
             if (this.uds && this.uds_bonus) {
                 return parseInt(this.uds) + parseInt(this.uds_bonus);
             } else {
-                return '???';
+                return '-';
             }
         },
         dto: function () {
-            if (this.uds_total !== '???') {
+            if (this.uds_total !== '-') {
                 return ((this.uds_bonus / this.uds_total) * 100).toFixed(2) + '%';
             } else {
-                return '???';
+                return '-';
             }
         }
     }
