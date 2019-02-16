@@ -14,11 +14,11 @@ new Vue({
             }
         },
         pvp: function () {
-            return this.pvp_calc !== '-' ?  this.pvp_calc + '%' : this.pvp_calc;
+            return this.pvp_calc !== '-' ?  this.pvp_calc + '€' : this.pvp_calc;
         },
         ganancia: function () {
             if (this.pvp_calc !== '-') {
-                return (this.pvp_calc - (this.pvl * this.iva)).toFixed(2) + ' €';
+                return (this.pvp_calc - (this.pvl * this.iva)).toFixed(2) + '€';
             } else {
                 return '-';
             }
@@ -35,23 +35,26 @@ new Vue({
         pvp: null
     },
     computed: {
-        pvl_final: function() {
+        pvl_final_calc: function() {
             if (this.pvl && this.dto) {
                 return (this.pvl - (this.pvl * (this.dto / 100))).toFixed(2);
             } else {
                 return '-';
             }
         },
+        pvl_final: function() {
+            return this.pvl_final_calc === '-' ? this.pvl_final_calc : this.pvl_final_calc + '€';
+        },
         margen: function () {
-            if (this.pvl_final !== '-' && this.pvp) {
-                return ((1  - ((this.pvl_final * this.iva) / this.pvp)) * 100).toFixed(2) + '%';
+            if (this.pvl_final_calc !== '-' && this.pvp) {
+                return ((1  - ((this.pvl_final_calc * this.iva) / this.pvp)) * 100).toFixed(2) + '%';
             } else {
                 return '-';
             }
         },
         ganancia: function () {
-            if (this.pvp && this.pvl_final) {
-                return (this.pvp - (this.pvl_final * this.iva)).toFixed(2) + '€';
+            if (this.pvp && this.pvl_final_calc) {
+                return (this.pvp - (this.pvl_final_calc * this.iva)).toFixed(2) + '€';
             } else {
                 return '-';
             }
